@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>Article Input Page</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+
+			<div class="card-header bg-primary text-white text-center">
+				<h3>WELCOME TO ARTICLE INPUT PAGE</h3>
+			</div>
+
+			<div class="card-body">
+				<form th:action="@{/ctskn/save}" method="POST" enctype="multipart/form-data">
+					
+
+
+					<div class="row">
+						<div class="col-3">
+							<label>Article Name</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="articleName" class="form-control"/>
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-3">
+							<label>Article Contributor</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="articleContributor" class="form-control"/>
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-3">
+							<label>Enable PhotoGraph</label>
+						</div>
+						<div class="col-4">
+							<input type="radio" name="enablePhoto" value="Yes" /> Yes <input
+								type="radio" name="enablePhoto" value="No" /> No
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+
+
+
+					
+					
+					<div class="row">
+						<div class="col-3">
+							<label>Upload PhotoGraph</label>
+						</div>
+						<div class="col-4">
+							<input type="file" name="contributorPhoto"  />
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-3">
+							<label>Upload Article</label>
+						</div>
+						<div class="col-4">
+							<input type="file" name="uploadArticle"  />
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-3">
+							<label>Article Description</label>
+						</div>
+						<div class="col-4">
+							<textarea name="description" class="form-control"></textarea>
+						</div>
+						<div class="col-5">
+							<span id=""></span>
+						</div>
+					</div>
+
+					<input type="submit" value="Add Article" class="btn btn-success"/>
+				</form>
+
+			</div> <!-- Card Body end -->
+			
+			<div class="card-footer alert alert-success" th:if="${message!=null}">
+				<span th:text="${message}"></span>
+			</div>
+
+		</div>
+		<!-- card end -->
+
+	</div>
+	<!-- container end -->
+
+</body>
+</html>

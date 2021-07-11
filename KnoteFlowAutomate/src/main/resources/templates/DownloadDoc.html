@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>Article Input Page</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+
+			<div class="card-header bg-primary text-white text-center">
+				<h3>WELCOME TO DOWNLOAD  PAGE</h3>
+			</div>
+
+			<div class="card-body">
+				</div> <!-- Card Body end -->
+			<table class="table  table-striped">
+			<thead class="thead-dark">
+			<tr>
+			<th>DOC ID</th>
+			<th>ARTICLE NAME</th>
+			<th>DOCUMENT NAME</th>
+			<th>DOWNLOAD LINK</th>
+			</tr>
+			</thead>
+			<tr th:each="ob:${doclist}">
+			<th th:text= "${ob[0]}"></th>
+			<th th:text= "${ob[1]}"></th>
+			<th th:text= "${ob[2]}"></th>
+			<th><a th:href="@{/ctskn/downloads(id=${ob[0]})}">DOWNLOAD</a></th>			
+			</tr>			
+			</table>
+		</div>
+		<!-- card end -->
+
+	</div>
+	<!-- container end -->
+
+</body>
+</html>
